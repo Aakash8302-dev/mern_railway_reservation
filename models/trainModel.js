@@ -22,6 +22,17 @@ const TrainSchema = mongoose.Schema({
             type: Date,
             required: true
         }
+    }],
+    seats:[{
+        class:{
+            type: String
+        },
+        availability:{
+            type: Number
+        },
+        total:{
+            type: Number
+        }
     }]
 })
 
