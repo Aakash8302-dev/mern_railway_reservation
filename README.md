@@ -34,6 +34,9 @@ node seeder -i
 Destroy All Data
 node seeder -d
 
+Start Server
+npm run server
+
 Start Client 
 cd /client
 npm start
