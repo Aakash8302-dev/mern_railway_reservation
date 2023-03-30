@@ -20,11 +20,11 @@ cp .env.example .env
 Replace the placeholder credentials in the .env file with your credentials
 
 Install project dependencies
-```
+
 npm install
 cd/client
 npm install
-
+```
 ## Database Seeder
 Run seeder Script to Populate Database
 ```
