@@ -6,8 +6,10 @@ connectDB();
 
 const Train = require('./models/trainModel.js')
 
+//Reads to JSON files and parse it
 const trains = JSON.parse(fs.readFileSync(`${__dirname}/resources/train.json`, 'utf-8'));
 
+//Funtion to import Train Data into DB
 const importData = async () => {
 try {
     await Train.create(trains);
@@ -18,6 +20,7 @@ try {
 }
 };
 
+//Function to delete Train Data from DB
 const deleteData = async () => {
     try {
       await Train.deleteMany();
@@ -29,7 +32,7 @@ const deleteData = async () => {
   };
 
 
-
+//Calls function based on input
 if (process.argv[2] === '-i') {
     importData();
 } else if (process.argv[2] === '-d') {

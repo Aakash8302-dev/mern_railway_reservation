@@ -4,12 +4,9 @@ const User = require('../models/userModel.js')
 const generateToken = require('../utils/generateToken.js')
 
 
-const test = asyncHandler(async(req,res) => {
-    res.json({
-        msg: "Amazingg"
-    })
-})
-
+// @desc Register a new User
+// @route POST /api/users/register
+// @access Public
 const register = asyncHandler(async(req,res) => {
     try {
         const {name, username, password} = req.body
@@ -40,6 +37,9 @@ const register = asyncHandler(async(req,res) => {
     }
 }) 
 
+// @desc User Login
+// @route POST /api/users/login
+// @access Public
 const login = asyncHandler(async (req,res) => {
     try {
 
@@ -72,6 +72,12 @@ const login = asyncHandler(async (req,res) => {
         })
     }
 
+})
+
+const test = asyncHandler(async(req,res) => {
+    res.json({
+        msg: "Amazingg"
+    })
 })
 
 module.exports = {

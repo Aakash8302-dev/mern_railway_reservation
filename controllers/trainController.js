@@ -1,7 +1,9 @@
 const asyncHandler = require('express-async-handler')
 const Train = require('../models/trainModel.js')
 
-
+// @desc Create a train route
+// @route POST /api/train/create
+// @access Public
 const createTrain = asyncHandler(async(req,res)=> {
     try {
         const {train, trainId, routes} = req.body
@@ -26,6 +28,9 @@ const createTrain = asyncHandler(async(req,res)=> {
     }
 })
 
+// @desc Get All train routes
+// @route GET /api/train/
+// @access Public
 const getAllTrain = asyncHandler(async (req,res)=>{
     try {
 
@@ -48,6 +53,9 @@ const getAllTrain = asyncHandler(async (req,res)=>{
     }
 })
 
+// @desc Get the list of stops
+// @route GET /api/train/findstops
+// @access Public
 const findStops = asyncHandler(async (req,res)=>{
     try {
 
@@ -81,6 +89,9 @@ const findStops = asyncHandler(async (req,res)=>{
     }
 })
 
+// @desc Get train Route for FROM and TO
+// @route GET /api/train/:from/:to
+// @access Public
 const trainSearch = asyncHandler(async (req,res)=>{
     try {
         const {from, to} = req.params
