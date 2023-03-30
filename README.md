@@ -33,7 +33,6 @@ node seeder -i
 
 Destroy All Data
 node seeder -d
-```
 
 Start Client 
 cd /client
